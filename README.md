@@ -41,7 +41,7 @@ Av de nedanstående uppgifterna måste gruppen slutföra följande. Alla i grupp
 
 Om du inte är repo-ägaren, forka repot till ditt eget GitHub-konto och gör följande ändringar. Om du är det, fortsätt bara med uppgifterna nedan:
 
-- [ ] **Uppdatera databasen för att använda PostgreSQL**
+- [X] **Uppdatera databasen för att använda PostgreSQL**
 - [ ] **Uppdatera koden för att använda PostgreSQL**
 - [ ] **Skapa en docker-compose.yml-fil för att starta applikationen med PostgreSQL**
 - [ ] **distribuera lokalt med docker compose**

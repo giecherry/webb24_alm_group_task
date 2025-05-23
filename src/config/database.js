@@ -3,20 +3,12 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-let sequelize;
-
-if (process.env.NODE_ENV !== "test") {
-  sequelize = new Sequelize({
-    dialect: "sqlite",
-    storage: process.env.DB_PATH,
-    logging: false, // Set to console.log to see SQL queries
+const sequelize = new Sequelize({
+  host: process.env.DB_HOST,
+  username: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  logging: false, 
   });
-} else {
-  sequelize = new Sequelize({
-    dialect: "sqlite",
-    storage: ":memory:",
-    logging: false, // Set to console.log to see SQL queries
-  });
-}
 
 module.exports = sequelize;
