@@ -22,7 +22,7 @@ const User = sequelize.define("User", {
   },
   profilePicture: {
     type: DataTypes.STRING,
-    validadte: {
+    validate: {
       isUrl: true,
     },
   },
