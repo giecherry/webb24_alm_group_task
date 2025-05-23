@@ -1,12 +1,17 @@
-const { User } = require("../test-setup");
+const { User, sequelize } = require("../test-setup");
+
+beforeAll(async () => {
+  await sequelize.sync({ force:true });
+});
 
 describe("User Model", () => {
   it("should create a user", async () => {
-    const user = await User.create({ username: "testuser", email: "test@test.com" })
+    const user = await User.create({ username: "testuser", email: "test@test.com", profilPicture: "https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png" })
 
     expect(user).toBeDefined();
     expect(user.username).toBe("testuser");
     expect(user.email).toBe("test@test.com");
+    expect(user.profilPicture).toBe( "https://cdn.pixabay.com/photo/2017/06/13/12/54/profile-2398783_1280.png");
   });
 
   it("should validate email format", async () => {
