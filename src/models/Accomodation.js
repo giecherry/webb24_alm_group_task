@@ -12,18 +12,43 @@ const Accomodation = sequelize.define("Accomodation", {
     address: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+            isValidAddress(value) {
+                if (typeof value !== 'string' || !isNaN(value)) {
+                    throw new Error('Address must be a valid string name');
+                }
+            }
+        }
     },
     city: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+            isValidCity(value) {
+                if (typeof value !== 'string' || !isNaN(value)) {
+                    throw new Error('City must be a valid string name');
+                }
+            }
+        }
     },
     country: {
         type: DataTypes.STRING,
         allowNull: false,
+        validate: {
+            isValidCountry(value) {
+                if (typeof value !== 'string' || !isNaN(value)) {
+                    throw new Error('Country must be a valid string name');
+                }
+            }
+        }
     },
     postalCode: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
+        validate: {
+            isInt: true,
+            min: 0,
+            },
     },
     rent: {
         type: DataTypes.DECIMAL(10, 2),
@@ -37,6 +62,7 @@ const Accomodation = sequelize.define("Accomodation", {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
+        isInt: true,
         min: 1, 
         },
     },
