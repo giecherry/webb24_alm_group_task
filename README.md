@@ -42,9 +42,9 @@ Av de nedanstående uppgifterna måste gruppen slutföra följande. Alla i grupp
 Om du inte är repo-ägaren, forka repot till ditt eget GitHub-konto och gör följande ändringar. Om du är det, fortsätt bara med uppgifterna nedan:
 
 - [X] **Uppdatera databasen för att använda PostgreSQL**
-- [ ] **Uppdatera koden för att använda PostgreSQL**
-- [ ] **Skapa en docker-compose.yml-fil för att starta applikationen med PostgreSQL**
-- [ ] **distribuera lokalt med docker compose**
+- [X] **Uppdatera koden för att använda PostgreSQL**
+- [X] **Skapa en docker-compose.yml-fil för att starta applikationen med PostgreSQL**
+- [X] **distribuera lokalt med docker compose**
 
 _docker/docker-compose.yml_
 
@@ -83,17 +83,23 @@ volumes:
 _Distribuera lokalt med docker compose_
 
 ```
-docker compose up ./docker/docker-compose.yml
+docker compose up
 ```
 
 _Stäng ner applikationen_
 
 ```
-docker compose down ./docker/docker-compose.yml
+docker compose down 
 ```
 
+Grupp:
 
 Steg 1: docker build -f docker/Dockerfile -t alm .
 Steg 2: docker run -p 3000:3000 alm
 
-test 2
+
+docker compose up
+
+docker compose down 
+
+test
