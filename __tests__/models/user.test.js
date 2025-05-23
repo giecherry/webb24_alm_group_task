@@ -18,6 +18,13 @@ describe("User Model", () => {
     const user = User.build({ username: "Anders", email: "invalid-email" })
     await expect(user.validate()).rejects.toThrow();
   });
+
+  it("Should be unique epost", async () => {
+    await User.create({ username: "Lisa", email: "Lisa@test.com" });
+    await expect(
+      User.create({ username: "Anders", email: "Anders@test.com" })
+    ).rejects.toThrow();
+  });
   
 });
 
