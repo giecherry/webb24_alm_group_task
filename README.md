@@ -30,12 +30,12 @@ Av de nedanstående uppgifterna måste gruppen slutföra följande. Alla i grupp
 
 **Obligatoriska uppgifter**
 
-- [ ] **Koden kommer att ha sina tester köra med GitHub Actions**
-- [ ] **Koden kommer att containeriseras med en Dockerfile**
-- [ ] **Accomodation model ska ha en adress, stad, land, postnummer, hyra, rum och eventuellt userId (behöver tester)**
-- [ ] **User model ska tvinga unik e-post och användarnamn samt validera e-postformat (behöver tester)**
-- [ ] **User model ska ha ett profilbildsfält som är en url till en bild (behöver tester)**
-- [ ] **Accomodation model ska CASCADE-raderas när användaren raderas (behöver tester)**
+- [X] **Koden kommer att ha sina tester köra med GitHub Actions**
+- [X] **Koden kommer att containeriseras med en Dockerfile**
+- [X] **Accomodation model ska ha en adress, stad, land, postnummer, hyra, rum och eventuellt userId (behöver tester)**
+- [X] **User model ska tvinga unik e-post och användarnamn samt validera e-postformat (behöver tester)**
+- [X] **User model ska ha ett profilbildsfält som är en url till en bild (behöver tester)**
+- [X] **Accomodation model ska CASCADE-raderas när användaren raderas (behöver tester)**
 
 ### Individuella uppgifter för VG
 
