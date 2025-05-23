@@ -12,7 +12,6 @@ beforeAll(async () => {
 });
 
 afterEach(async () => {
-  console.log("Cleaning up database...");
   await User.destroy({ where: {} });
   await Accomodation.destroy({ where: {} });
 });
