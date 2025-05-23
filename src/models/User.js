@@ -21,7 +21,7 @@ const User = sequelize.define("User", {
     },
   },
    profilePicture: {
-    type: DataType.STRING,
+    type: DataTypes.STRING,
     validadte: {
       isUrl: true,
     },
