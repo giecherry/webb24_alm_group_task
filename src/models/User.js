@@ -18,7 +18,13 @@ const User = sequelize.define("User", {
     unique: true,
     validate: {
       isEmail: true,
-    }
+    },
+  },
+   profilePicture: {
+    type: DataType.STRING,
+    validadte: {
+      isUrl: true,
+    },
   },
 });
 
