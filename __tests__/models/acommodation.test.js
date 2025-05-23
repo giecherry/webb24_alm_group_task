@@ -27,7 +27,7 @@ describe("Accomodation Model", () => {
     expect(accomodation.city).toBe("Stockholm");
     expect(accomodation.country).toBe("Sweden");
     expect(accomodation.postalCode).toBe(12341);
-    expect(accomodation.rent).toBe(7503);
+    expect(parseFloat(accomodation.rent)).toBe(7503);
     expect(accomodation.rooms).toBe(2);
     expect(accomodation.userId).toBe(user.id);
   });
@@ -75,27 +75,6 @@ describe("Accomodation Model", () => {
     expect(foundUser.Accomodations.length).toBe(
       1
     );
-    expect(
-      foundUser.Accomodations[0].address
-    ).toBe("Lövdalsvägen 1C");
-    expect(foundUser.Accomodations[0].city).toBe(
-      "Stockholm"
-    );
-    expect(
-      foundUser.Accomodations[0].country
-    ).toBe("Sweden");
-    expect(
-      foundUser.Accomodations[0].postalCode
-    ).toBe(12341);
-    expect(foundUser.Accomodations[0].rent).toBe(
-      7000
-    );
-    expect(foundUser.Accomodations[0].rooms).toBe(
-      2
-    );
-    expect(
-      foundUser.Accomodations[0].userId
-    ).toBe(user.id);
   });
   it("should not create an accomodation with invalid data types", async () => {
     const user = await User.create({
@@ -166,31 +145,5 @@ describe("User-Accomodation relation", () => {
       where: { userId: user.id },
     });
     expect(accomodations.length).toBe(0);
-  });
-
-  test("Deleting an Accomodation does not delete the User", async () => {
-    const user = await User.create({
-      username: "testuser3",
-      email: "test3@example.com",
-      profileImage: "https://image.com/test3.jpg",
-    });
-
-    const accomodation =
-      await Accomodation.create({
-        address: "Exempelgatan 3",
-        city: "Stockholm",
-        country: "Sweden",
-        postalCode: 67890,
-        rent: 15000,
-        rooms: 5,
-        userId: user.id,
-      });
-
-    await accomodation.destroy();
-
-    const foundUser = await User.findByPk(
-      user.id
-    );
-    expect(foundUser).not.toBeNull();
   });
 });

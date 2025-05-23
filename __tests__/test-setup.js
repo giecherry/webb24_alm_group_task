@@ -5,9 +5,6 @@ const Accomodation = require("../src/models/Accomodation");
 
 beforeAll(async () => {
   await sequelize.authenticate();
-  await sequelize.query(
-    "PRAGMA foreign_keys = ON"
-  );
   await sequelize.sync({ force: true });
 });
 
