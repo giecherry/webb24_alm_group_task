@@ -91,3 +91,7 @@ _Stäng ner applikationen_
 ```
 docker compose down ./docker/docker-compose.yml
 ```
+
+
+Steg 1: docker build -f docker/Dockerfile -t alm .
+Steg 2: docker run -p 3000:3000 alm
