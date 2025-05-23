@@ -15,11 +15,8 @@ describe("User Model", () => {
   });
 
   it("should validate email format", async () => {
-    // Build: Create a new user instance without saving it to the database
-    const user = User.build({ username: "testuser", email: "invalid-email" });
-    // Validate: Check if the user instance is valid
-    // rejects.toThrow() is used to check if the user instance is invalid
-    expect(user.validate()).rejects.toThrow();
+    const user = User.build({ username: "Anders", email: "invalid-email" })
+    await expect(user.validate()).rejects.toThrow();
   });
   
 });
